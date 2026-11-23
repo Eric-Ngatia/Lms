@@ -2,6 +2,18 @@
 
 Date : 2026-11-23. Agent unique (aucune délégation à des sous-agents).
 
+## Statut
+
+**Phase 0 validée par le propriétaire le 2026-11-23.**
+
+Réserves acceptées avec la validation (non levées à ce jour) :
+
+- PostgreSQL via Docker non testé (Docker Desktop arrêté) : à valider en tout premier lors de la Phase 1.
+- Contrôle visuel humain de `/design-system` (clair, sombre, mobile) : non consigné.
+- Pas de revue indépendante ; ADR-004 et ADR-005 restent « Proposé ».
+
+La Phase 1 n'est pas commencée et nécessite son propre plan et son approbation.
+
 ## 1. Résumé
 
 Socle Next.js/TypeScript posé, design system (tokens clair/sombre, bouton, page `/design-system`), outillage de test, gouvernance documentaire et ADR. **Un critère d'acceptation n'est pas validé : PostgreSQL via Docker (voir §7).**
@@ -30,18 +42,18 @@ Exécutés avant le code, échec pour la bonne raison :
 
 ## 5–7. Commandes réellement exécutées et résultats
 
-| Commande                                                       | Résultat                                                                     |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `pnpm test`                                                    | OK (31/31)                                                                   |
-| `pnpm typecheck`                                               | OK                                                                           |
-| `pnpm lint`                                                    | OK (après correction de 3 problèmes, dont un `setState` dans un effet)      |
-| `pnpm build`                                                   | OK (3 routes statiques)                                                      |
-| `pnpm exec prettier --check .`                                 | OK                                                                           |
-| `pnpm test:e2e`                                                | OK, 6/6 (desktop Chrome + Pixel 7)                                           |
-| Contrastes WCAG (script calculant depuis `globals.css`)        | OK après correction de `--input` (1,4:1 → 3,8:1 clair ; 1,8:1 → 4,0:1 sombre) |
-| `docker compose config --quiet`                                | OK (syntaxe valide)                                                          |
-| Démarrage PostgreSQL, connexion, `pnpm db:migrate`             | **NOT RUN** : Docker Desktop arrêté (`dockerDesktopLinuxEngine` introuvable) |
-| Contrôle visuel humain clair/sombre/mobile                     | **NOT RUN** : à faire par le propriétaire sur `/design-system`               |
+| Commande                                                | Résultat                                                                      |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `pnpm test`                                             | OK (31/31)                                                                    |
+| `pnpm typecheck`                                        | OK                                                                            |
+| `pnpm lint`                                             | OK (après correction de 3 problèmes, dont un `setState` dans un effet)        |
+| `pnpm build`                                            | OK (3 routes statiques)                                                       |
+| `pnpm exec prettier --check .`                          | OK                                                                            |
+| `pnpm test:e2e`                                         | OK, 6/6 (desktop Chrome + Pixel 7)                                            |
+| Contrastes WCAG (script calculant depuis `globals.css`) | OK après correction de `--input` (1,4:1 → 3,8:1 clair ; 1,8:1 → 4,0:1 sombre) |
+| `docker compose config --quiet`                         | OK (syntaxe valide)                                                           |
+| Démarrage PostgreSQL, connexion, `pnpm db:migrate`      | **NOT RUN** : Docker Desktop arrêté (`dockerDesktopLinuxEngine` introuvable)  |
+| Contrôle visuel humain clair/sombre/mobile              | **NOT RUN** : à faire par le propriétaire sur `/design-system`                |
 
 ## 8. Critères d'acceptation
 
