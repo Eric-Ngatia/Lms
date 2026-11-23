@@ -4,6 +4,10 @@
 
 ANALYSIS → PLAN (`docs/plans/PHASE_<n>.md`) → approbation du propriétaire → RED (tests) → vérification que l'échec vient de l'absence de la fonctionnalité → GREEN (minimum) → REFACTOR → validation complète → revue → rapport (`docs/reports/PHASE_<n>_RAPPORT.md`) → approbation avant la phase suivante.
 
+## Branches (voir `AGENTS.md` §K)
+
+Étape 0 de toute phase ou tâche : créer la branche (`feature/`, `fix/`, `refactor/`, `test/` ou `chore/`) **avant d'écrire la moindre ligne de code**, puis vérifier `git branch --show-current`. Jamais de développement direct sur `main`. Fusion après validation complète et approbation du propriétaire.
+
 ## Règles
 
 - Une demande de précision n'est jamais une autorisation de continuer.

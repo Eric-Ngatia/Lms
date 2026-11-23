@@ -57,6 +57,27 @@ Code lisible (§32 du prompt) : noms explicites, fonctions courtes, commentaires
 
 Identifier le document → proposer la modification → approbation si elle change une règle validée → mettre à jour → vérifier l'absence de contradiction.
 
+## K. Branches Git (règle permanente)
+
+La branche `main` ne reçoit jamais de développement direct. **La branche de travail doit être créée avant d'écrire la moindre ligne de code**, y compris pour un test, un fichier de configuration ou de la documentation technique.
+
+Une nouvelle branche est obligatoire pour :
+
+- `feature/<sujet>` : nouvelle fonctionnalité (page de connexion, lecteur de cours, tableau de bord…).
+- `fix/<sujet>` (ou `bugfix/`) : correction de bug.
+- `refactor/<sujet>` : réorganisation sans changement de comportement.
+- `test/<sujet>` ou `chore/<sujet>` : expérimentation (nouvelle bibliothèque), outillage, maintenance.
+
+Conventions :
+
+- Noms en minuscules, séparés par des tirets, préfixés par le type (ex. `feature/phase-1-auth`).
+- Une phase = au moins une branche ; ne pas mélanger deux sujets dans la même branche.
+- Vérifier avec `git branch --show-current` que l'on n'est pas sur `main` avant la première modification.
+- Fusion dans `main` uniquement après validation complète de la phase (tests, lint, typecheck, build) et approbation du propriétaire.
+- Pas de `git push --force`, pas de réécriture de l'historique de `main`.
+
+Historique : la Phase 0 a été commitée directement sur `main` avant l'existence de cette règle (dépôt vide à l'initialisation).
+
 ## Commandes
 
 `pnpm dev` · `pnpm build` · `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm test:e2e` · `docker compose up -d` (PostgreSQL) · `pnpm db:generate` / `pnpm db:migrate`
