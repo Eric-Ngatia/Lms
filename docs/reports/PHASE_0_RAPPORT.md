@@ -42,18 +42,18 @@ Exécutés avant le code, échec pour la bonne raison :
 
 ## 5–7. Commandes réellement exécutées et résultats
 
-| Commande                                                       | Résultat                                                                     |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `pnpm test`                                                    | OK (31/31)                                                                   |
-| `pnpm typecheck`                                               | OK                                                                           |
-| `pnpm lint`                                                    | OK (après correction de 3 problèmes, dont un `setState` dans un effet)      |
-| `pnpm build`                                                   | OK (3 routes statiques)                                                      |
-| `pnpm exec prettier --check .`                                 | OK                                                                           |
-| `pnpm test:e2e`                                                | OK, 6/6 (desktop Chrome + Pixel 7)                                           |
-| Contrastes WCAG (script calculant depuis `globals.css`)        | OK après correction de `--input` (1,4:1 → 3,8:1 clair ; 1,8:1 → 4,0:1 sombre) |
-| `docker compose config --quiet`                                | OK (syntaxe valide)                                                          |
-| Démarrage PostgreSQL, connexion, `pnpm db:migrate`             | **NOT RUN** : Docker Desktop arrêté (`dockerDesktopLinuxEngine` introuvable) |
-| Contrôle visuel humain clair/sombre/mobile                     | **NOT RUN** : à faire par le propriétaire sur `/design-system`               |
+| Commande                                                | Résultat                                                                      |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `pnpm test`                                             | OK (31/31)                                                                    |
+| `pnpm typecheck`                                        | OK                                                                            |
+| `pnpm lint`                                             | OK (après correction de 3 problèmes, dont un `setState` dans un effet)        |
+| `pnpm build`                                            | OK (3 routes statiques)                                                       |
+| `pnpm exec prettier --check .`                          | OK                                                                            |
+| `pnpm test:e2e`                                         | OK, 6/6 (desktop Chrome + Pixel 7)                                            |
+| Contrastes WCAG (script calculant depuis `globals.css`) | OK après correction de `--input` (1,4:1 → 3,8:1 clair ; 1,8:1 → 4,0:1 sombre) |
+| `docker compose config --quiet`                         | OK (syntaxe valide)                                                           |
+| Démarrage PostgreSQL, connexion, `pnpm db:migrate`      | **NOT RUN** : Docker Desktop arrêté (`dockerDesktopLinuxEngine` introuvable)  |
+| Contrôle visuel humain clair/sombre/mobile              | **NOT RUN** : à faire par le propriétaire sur `/design-system`                |
 
 ## 8. Critères d'acceptation
 
